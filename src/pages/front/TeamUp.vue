@@ -1,6 +1,7 @@
 <template>
   <h2 class="title01">組團揪夥</h2>
   <h5 class="smtitle03">活動地區:</h5>
+  <h5 class="smtitle04">活動類型:</h5>
   <!-- <div class="q-gutter-sm chose">
     <q-btn class="col-12" v-for="gang,index in categories" rounded color="amber-7"
     :key="index" :label="gang" @click="gangActive=gang" />
@@ -9,6 +10,16 @@
   <q-btn-dropdown class="black chose" color="amber-8" label="選 擇 城 市">
       <q-list>
         <q-item clickable v-close-popup v-for="gang,index in categories" :key="index" @click="gangActive=gang">
+          <q-item-section>
+            <q-item-label>{{ gang }}</q-item-label>
+          </q-item-section>
+        </q-item>
+    </q-list>
+  </q-btn-dropdown>
+
+  <q-btn-dropdown class="black chose02" color="amber-8" label="選 擇 活 動">
+      <q-list>
+        <q-item clickable v-close-popup v-for="gang,index in actives" :key="index" @click="gangAct=gang">
           <q-item-section>
             <q-item-label>{{ gang }}</q-item-label>
           </q-item-section>
@@ -35,15 +46,20 @@ import Swal from 'sweetalert2'
 import ProductCard from '../../components/ProductCard.vue'
 
 const categories = ['所有地區', '台北市', '新北市', '桃園市', '臺中市', '臺南市', '高雄市']
+const actives = ['所有活動', '運動', '聊天', '吃飯', '散步', '唱歌', '活動', '露營', '旅行', '閱讀']
 const gangActive = ref(categories[0])
+const gangAct = ref(actives[0])
 
 const products = reactive([])
 
 const filterData = computed(() => {
-  if (gangActive.value === categories[0]) {
-    return products
-  } else {
+  if (gangActive.value !== categories[0]) {
+    // console.log(gangAct)
     return products.filter((item) => item.category === gangActive.value)
+  } else if (gangAct.value !== actives[0]) {
+    return products.filter((item) => item.genre === gangAct.value)
+  } else {
+    return products
   }
 });
 
@@ -88,6 +104,14 @@ const filterData = computed(() => {
   margin-left: 10%;
 }
 
+.smtitle04{
+  position: absolute;
+  color:#C01E6C;
+  font-weight: 550;
+  left: 515px;
+  top: 150px;
+}
+
 hr{
   border: 12px solid #FFE5B4;
   margin-bottom: 0px;
@@ -105,5 +129,11 @@ hr{
   position: absolute;
   top: 186px;
   left: 16%;
+}
+
+.chose02{
+  position: absolute;
+  top: 186px;
+  left: 32.7%;
 }
 </style>
