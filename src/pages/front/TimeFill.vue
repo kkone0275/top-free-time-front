@@ -1,10 +1,7 @@
 <template>
   <h2 class="title01">空閒時間</h2>
   <h5 class="smtitle03">活動地區:</h5>
-  <!-- <div class="q-gutter-sm chose">
-    <q-btn class="col-12" v-for="gang,index in categories" rounded color="amber-7"
-    :key="index" :label="gang" @click="gangActive=gang" />
-  </div> -->
+
   <div class="chose">
   <q-btn-dropdown class="black" color="amber-8" label="選 擇 城 市">
     <q-list>

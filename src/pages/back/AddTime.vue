@@ -1,6 +1,6 @@
 <template>
   <h5 class="text-center">空閒發布</h5>
-  <q-btn class="add" style="background: #F3A308; color: white" @click="openAdd(-1)" label="新增揪團" />
+  <q-btn class="add" style="background: #FFB300; color: white" @click="openAdd(-1)" label="新增空閒" />
 
   <div style="max-width: 100%">
     <div class="q-pa-md q-gutter-md top-item">
