@@ -23,7 +23,7 @@
     <q-btn class="glossy" icon-right="play_arrow" rounded color="deep-orange-5" label="組隊揪夥" to="/teamup" />
   </div>
   <p class="word02">
-    出租者除了租自己時間陪伴外，不論男女有不同專業與專長的也<br>
+    讓有空閒者提供自己的時間陪伴，不論男女有不同專業與專長的也<br>
     可以提供給其他人，像是教語言、學電腦、練健身、學專長等等。
   </p>
   <div>

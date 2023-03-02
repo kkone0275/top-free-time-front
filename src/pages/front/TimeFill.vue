@@ -1,5 +1,5 @@
 <template>
-  <h2 class="title01">時間填空</h2>
+  <h2 class="title01">空閒時間</h2>
   <h5 class="smtitle03">活動地區:</h5>
   <!-- <div class="q-gutter-sm chose">
     <q-btn class="col-12" v-for="gang,index in categories" rounded color="amber-7"
